@@ -1,0 +1,16 @@
+import string
+import random
+
+class PasswordGenerator:
+    def __init__(self):
+        self.characters = string.ascii_letters + string.digits + string.punctuation
+
+    def generate_password(self, length):
+        password = ''.join(random.choice(self.characters) for _ in range(length))
+        return password
+
+if __name__ == '__main__':
+    password_generator = PasswordGenerator()
+
+    password = password_generator.generate_password(12)
+    print(f"Generated Password: {password}")
